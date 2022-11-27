@@ -1,15 +1,14 @@
-import './style.less';
-import { CreateTask } from './components/CreateTask';
-import { TaskList } from './components/TaskList';
+import "./style.less";
+import { Task } from "./components/Task";
+import { TaskList } from "./components/TaskList";
 
 function App() {
-
-  return (
-    <div className='container'>
-      <CreateTask/>
-      <TaskList/>
-    </div>
-  );
+	return (
+		<div className="container">
+			<Task title={"Create task"} isMother={true} />
+			<TaskList />
+		</div>
+	);
 }
 
 export default App;

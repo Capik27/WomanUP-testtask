@@ -1,12 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.less';
-import App from './App';
+import React, { createContext } from "react";
+import ReactDOM from "react-dom/client";
+import "./index.less";
+import App from "./App";
+import { firestore, storage } from "./firebase/init_firebase";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+export const FireCtx = createContext(null);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+	<React.StrictMode>
+		<FireCtx.Provider value={{ firestore, storage }}>
+			<App />
+		</FireCtx.Provider>
+	</React.StrictMode>
 );
-
