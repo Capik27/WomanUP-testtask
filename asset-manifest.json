@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/womanup-testtask/static/css/main.be3aff3c.css",
+    "main.js": "/womanup-testtask/static/js/main.22f5056b.js",
+    "index.html": "/womanup-testtask/index.html",
+    "main.be3aff3c.css.map": "/womanup-testtask/static/css/main.be3aff3c.css.map",
+    "main.22f5056b.js.map": "/womanup-testtask/static/js/main.22f5056b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be3aff3c.css",
+    "static/js/main.22f5056b.js"
+  ]
+}
