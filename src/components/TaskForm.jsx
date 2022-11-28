@@ -98,6 +98,7 @@ export const TaskForm = (props) => {
 			const storageRef = ref(storage, `${id}/${obj[file].name}`);
 			uploadBytes(storageRef, file);
 		}
+		downloadFiles(id);
 	}
 
 	/**
