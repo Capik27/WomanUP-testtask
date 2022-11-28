@@ -35,9 +35,7 @@ export const TaskForm = (props) => {
 	 */
 	useEffect(() => {
 		if (!isMother) {
-			if (files && lfiles.length === 0) {
-				downloadFiles(props.id);
-			}
+			downloadFiles(props.id);
 		}
 	}, [lfiles]);
 
@@ -154,10 +152,8 @@ export const TaskForm = (props) => {
 			files: files ? true : false,
 			completed: completed,
 		};
-		if (files) {
-			uploadFiles(files, id);
-			downloadFiles(id);
-		}
+		if (files) uploadFiles(files, id);
+
 		const docRef = doc(collection(firestore, "tasks"), id);
 		await setDoc(docRef, newTask, { merge: true });
 	};
