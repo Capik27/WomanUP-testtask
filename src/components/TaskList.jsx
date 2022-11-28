@@ -4,12 +4,16 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import { FireCtx } from "../index.js";
 import { Task } from "./Task.jsx";
 
+/**
+ * Рендерит компоненты тасков загружая их с бэкенда
+ * @returns вернёт ничего, если список тасков пуст
+ */
 export const TaskList = () => {
 	const { firestore } = useContext(FireCtx);
 	const taskCollection = collection(firestore, "tasks");
-	const queryTask = query(taskCollection, orderBy("date"));
+	const queryTask = query(taskCollection, orderBy("id"));
 	const [tasks, loading, error] = query(
-		useCollectionData(queryTask, orderBy("date"))
+		useCollectionData(queryTask, orderBy("id"))
 	);
 
 	const taskList = tasks
