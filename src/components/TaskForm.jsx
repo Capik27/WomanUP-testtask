@@ -98,7 +98,6 @@ export const TaskForm = (props) => {
 			const storageRef = ref(storage, `${id}/${obj[file].name}`);
 			uploadBytes(storageRef, file);
 		}
-		downloadFiles(id);
 	}
 
 	/**
@@ -155,7 +154,10 @@ export const TaskForm = (props) => {
 			files: files ? true : false,
 			completed: completed,
 		};
-		if (files) uploadFiles(files, id);
+		if (files) {
+			uploadFiles(files, id);
+			downloadFiles(id);
+		}
 		const docRef = doc(collection(firestore, "tasks"), id);
 		await setDoc(docRef, newTask, { merge: true });
 	};
